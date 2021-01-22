@@ -1,5 +1,5 @@
 var fnLoad = function() {
-	chrome.storage.sync.get({name: "匿名"}, function(o) {
+	chrome.storage.sync.get({name: "anonymous"}, function(o) {
 		if (o && o.name) {
 			$("#name").val(o.name);
 		}

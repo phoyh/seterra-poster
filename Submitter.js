@@ -1,5 +1,5 @@
 var fnGetName = function(fnThen) {
-	chrome.storage.sync.get({name: "匿名"}, function(o) {
+	chrome.storage.sync.get({name: "anonymous"}, function(o) {
 		fnThen(o && o.name);
 	});
 };
