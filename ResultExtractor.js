@@ -19,7 +19,7 @@ var fnExtractFlag = function() {
 };
 
 var fnExtractMode = function() {
-	return $("#drpGameMode option:selected").text();
+	return $("#drpGameMode").val();
 };
 
 chrome.runtime.onMessage.addListener(function(msg, sender, sendResponse) {
