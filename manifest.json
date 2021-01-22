@@ -1,0 +1,42 @@
+{
+	"name": "Seterra Notifier",
+	"version": "1.0",
+	"description": "Notifies of seterra results",
+	"page_action": {
+		"default_icon": {
+			"16": "images/toolbar_icon16.png",
+			"32": "images/toolbar_icon32.png",
+			"48": "images/toolbar_icon48.png",
+			"128": "images/toolbar_icon128.png"
+		},
+		"default_popup": "submit.html"
+	},
+	"options_ui": {
+		"page": "options.html",
+		"open_in_tab": false
+	},
+	"icons": {
+		"16": "images/toolbar_icon16.png",
+		"32": "images/toolbar_icon32.png",
+		"48": "images/toolbar_icon48.png",
+		"128": "images/toolbar_icon128.png"
+	},
+	"background": {
+		"scripts": ["BackgroundJob.js"],
+		"persistent": false
+	},
+	"permissions": [
+		"declarativeContent", // for dynamic enablement of icon
+		"storage", // for options
+		"tabs", // for extractor
+		//"http://localhost/*" // for submitter
+		"http://192.168.178.44/*" // for submitter
+	],
+	"content_scripts": [
+		{
+			"matches": ["https://online.seterra.com/*"],
+			"js": ["libs/jquery-3.5.1.min.js", "ResultExtractor.js"]
+		}
+	],
+	"manifest_version": 2
+}
